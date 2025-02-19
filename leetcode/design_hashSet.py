@@ -1,14 +1,15 @@
 class MyHashSet(object):
 
     def __init__(self):
-        self.set = set()
+        self.set = list()
 
     def add(self, key):
         """
         :type key: int
         :rtype: None
         """
-        self.set.add(key)
+        if not self.contains(key):
+            self.set.append(key)
 
     def remove(self, key):
         """
@@ -27,3 +28,15 @@ class MyHashSet(object):
             return True
         else:
             return False
+
+
+myclass = MyHashSet()
+myclass.add("12")
+myclass.add("12")
+myclass.add("13")
+myclass.remove("0")
+myclass.remove("12")
+print(myclass.contains("0"))
+print(myclass.contains("12"))
+print(myclass.contains("13"))
+print(myclass.set)
