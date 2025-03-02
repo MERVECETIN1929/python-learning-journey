@@ -2,7 +2,10 @@ import random
 
 
 def random_number_generator(random_number_start_point, random_number_end_point):
-    return random.randrange(random_number_start_point, random_number_end_point)
+    if random_number_end_point != random_number_start_point:
+        return random.randrange(random_number_start_point, random_number_end_point)
+    else:
+        return random_number_start_point
 
 
 random_number_start_point = 0
@@ -17,7 +20,7 @@ while True:
         print("Nice game")
         break
     elif user_info == "h":
-        random_number_end_point = random_number+1
+        random_number_end_point = random_number-1
 
     elif user_info == "l":
-        random_number_start_point = random_number-1
+        random_number_start_point = random_number+1
