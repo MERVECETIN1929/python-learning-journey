@@ -30,7 +30,6 @@ kelimede_yok = set()
 secilen_kelime = random.choice(words)
 tahmin_kelimesi = str("-"*len(secilen_kelime))
 sayac = len(secilen_kelime)
-print(secilen_kelime)
 while sayac > 0:
     girilen_harf = input(
         f"Bir harf giriniz: \n").upper()
@@ -48,3 +47,5 @@ while sayac > 0:
     if tahmin_kelimesi == secilen_kelime:
         print("Tebrikler...")
         break
+else:
+    print("Maalesef kaybettiniz. Kelime: ", secilen_kelime)
