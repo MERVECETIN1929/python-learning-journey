@@ -75,6 +75,21 @@ class LinkedList:
             raise Exception("Sorry, no numbers in the linked list")
         return current_node
 
+    def reverse(self):
+        if not self.head_node:
+            return self.head_node
+        old_head_node = self.head_node
+        current_node = Node(old_head_node.val)
+
+        while old_head_node.next_node:
+            old_head_node = old_head_node.next_node
+            new_node = Node(old_head_node.val)
+
+            new_node.next_node = current_node
+            current_node = new_node
+        self.head_node = current_node
+        return self.head_node
+
 
 linked_list = LinkedList(10)
 linked_list.append(20)
@@ -88,3 +103,11 @@ linked_list.deleteByNode(linked_list.turn_node_byValue(50))
 linked_list.printList()
 print("linked list boyutu:  ", linked_list.length())
 print(linked_list.search(10))
+linked_list.printList()
+deneme = linked_list.reverse()
+print("liste ters")
+while deneme:
+    print(deneme.val)
+    deneme = deneme.next_node
+
+linked_list.printList()
